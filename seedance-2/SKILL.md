@@ -2,15 +2,63 @@
 
 name: seedance-2
 description: Write paste-ready Seedance 2.0 video prompts for realistic AI video clips with believable motion, natural camera behavior, synced audio, realistic voices, accents, dialogue, ambient sound, product shots, UGC videos, testimonials, social ads, b-roll, and image-to-video animation. Use this whenever the user mentions Seedance, Seedance 2.0, a Seedance prompt, text-to-video, image-to-video, reference-to-video, video-to-video, AI video prompts, realistic UGC video, talking-head video, product video, voiceover, dialogue, accents, lip sync, or asks why a generated clip looks plasticky, fake, static, glitchy, overproduced, or unnatural.
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Seedance 2.0 Prompting Skill
 
-Default output: give the user one clean, paste-ready prompt in a code block. Do not include scenario, analysis, explanation, or “Skill Execution” unless the user explicitly asks for reasoning.
+Default output: give only one clean, paste-ready Seedance prompt in a code block. Do not include scenario, sample input, task summary, analysis, explanation, tutorial, or “Skill Execution” unless the user explicitly asks for reasoning.
 
 The goal is to write realistic Seedance 2.0 prompts that produce believable video, not fake-looking AI clips. Prioritize real camera behavior, practical lighting, natural movement, believable sound, grounded dialogue, and simple physical actions.
 
 Avoid overproduced AI-video language. Do not rely on phrases like “cinematic masterpiece,” “ultra realistic,” “8k,” “epic,” “award-winning,” “perfect lighting,” “Hollywood quality,” or “insanely detailed.” Those often create plastic skin, glossy product surfaces, fake motion, and over-polished commercial visuals.
+
+## Required output format
+
+Every Seedance prompt must use the structured multi-line format below.
+
+Do not output the prompt as one paragraph. Do not combine sections. Do not omit the opening `Create...` line. Do not omit the core headers.
+
+Required format:
+
+```text
+Create [video type], [duration], [aspect ratio].
+
+Subject:
+[one primary subject with concrete visible details]
+
+Action:
+[one clear physical action]
+
+Scene:
+[real location, time of day, background details]
+
+Camera:
+[shot size, camera angle, lens or phone feel, camera movement]
+
+Lighting:
+[practical light source, direction, color temperature, shadows]
+
+Motion realism:
+[what moves, what stays stable, pacing, natural micro-movement]
+
+Audio:
+[ambient sound, foley, room tone, music only if requested]
+
+Voice / dialogue:
+[language, accent, delivery, exact line, lip sync notes]
+
+Constraints:
+[what to avoid]
+
+Output:
+[duration], [aspect ratio].
+```
+
+For videos with no speaking, omit only the `Voice / dialogue:` section.
+
+For image-to-video prompts, keep a structured format but replace `Subject:` with `Preserve:` when the uploaded image already defines the subject.
+
+The final answer must be one clean code block containing this structure.
 
 ## Core rule
 
@@ -46,40 +94,27 @@ Most prompts should focus on one subject and one action per shot.
 | Spanish or English voice with accent                  | voice-controlled dialogue prompt  |
 | Video looks fake, plastic, or glitchy                 | troubleshooting rewrite           |
 
-## The structure that works
+## Mandatory prompt structure
 
-Use this order:
+Seedance prompts must follow this exact section order:
 
-```text
-Create [video type], [duration], [aspect ratio].
+1. `Create...`
+2. `Subject:` or `Preserve:` for image-to-video
+3. `Action:` or `Motion:` for image-to-video
+4. `Scene:`
+5. `Camera:`
+6. `Lighting:`
+7. `Motion realism:`
+8. `Audio:`
+9. `Voice / dialogue:` when speech is included
+10. `Constraints:`
+11. `Output:`
 
-Subject:
-[one primary subject with concrete visible details]
+Do not turn this into a paragraph. The section headers are part of the required output.
 
-Action:
-[one clear physical action]
+If the user gives a simple request, still expand it into this structure.
 
-Scene:
-[real location, time of day, background details]
-
-Camera:
-[shot size, angle, lens feel, camera movement, handheld or stable]
-
-Lighting:
-[practical light source, direction, color temperature, shadows]
-
-Motion realism:
-[small natural movements, physics, pacing, what should move and what should stay stable]
-
-Audio:
-[ambient sound, room tone, foley, music if needed, no music if not instructed]
-
-Voice / dialogue:
-[language, accent, delivery, exact line, lip sync notes]
-
-Constraints:
-[what to avoid]
-```
+If the user gives a messy or incomplete request, infer reasonable missing details and still output the full structure.
 
 ## Realism rules
 
@@ -223,17 +258,18 @@ Static smartphone back camera or tripod phone shot, eye-level medium close-up, s
 Lighting:
 Soft practical light from [direction], gentle shadows, realistic skin texture, no beauty filter.
 
+Motion realism:
+Small natural head movement, realistic blinking, subtle breathing, no exaggerated facial movement.
+
 Audio:
 Clean but natural phone-recorded voice, light room tone, no music unless requested.
 
 Voice / dialogue:
 Language: [English / Spanish / bilingual].
 Accent: [specific accent].
-Delivery: [friendly, casual, confident, calm, helpful, excited, etc.].
-Exact line: “[short spoken line]”
-
-Lip sync:
-Natural mouth movement, small pauses, realistic facial expression, no exaggerated lip movement.
+Delivery: [friendly, casual, confident, calm, helpful, excited], conversational and not announcer-like.
+Exact spoken line: “[short spoken line]”
+Lip sync: face visible while speaking, natural mouth movement, small pauses, no exaggerated lip motion.
 
 Constraints:
 No subtitles unless requested, no text overlays, no watermark, no fake logos, no plastic skin, no robotic voice, no announcer voice, no overacting.
@@ -250,7 +286,7 @@ Always include:
 
 * language
 * accent or dialect
-* age range or voice type
+* age range or voice type, if relevant
 * tone
 * speed
 * recording style
@@ -298,6 +334,7 @@ Voice: [gender/age/tone if relevant].
 Delivery: natural, conversational, not announcer-like, with small pauses and realistic breathing.
 Exact spoken line: “[short line]”
 Audio style: [phone-recorded / clean lav mic / indoor room tone / outdoor ambient noise].
+Lip sync: face visible, natural mouth movement, no exaggerated lip motion.
 ```
 
 ## Spanish dialogue rules
@@ -382,11 +419,10 @@ For better lip sync:
 * avoid background speakers
 * avoid singing unless the user specifically asks
 
-Add this for dialogue clips:
+Add this inside the `Voice / dialogue:` section for dialogue clips:
 
 ```text
-Lip sync:
-Keep the face visible while speaking, natural mouth shapes, realistic blinking, small head movement, no exaggerated lip motion.
+Lip sync: keep the face visible while speaking, natural mouth shapes, realistic blinking, small head movement, no exaggerated lip motion.
 ```
 
 ## Ambient sound and foley
@@ -469,7 +505,7 @@ Output:
 [duration], [aspect ratio].
 ```
 
-## UGC style product demo
+## UGC product demo
 
 For UGC videos with hands, keep the action simple.
 
@@ -513,14 +549,18 @@ RAW iPhone video, smartphone back camera, handheld chest-level framing, slight a
 Lighting:
 [practical light] from [direction], realistic shadows and natural skin texture.
 
+Motion realism:
+Small natural movement, realistic hand motion, no exaggerated gestures.
+
+Audio:
+Phone-recorded voice with natural room tone and subtle background noise.
+
 Voice / dialogue:
 Language: [language].
 Accent: [accent].
 Delivery: casual and conversational, not announcer-like.
 Exact spoken line: “[short line]”
-
-Audio:
-Phone-recorded voice with natural room tone and subtle background noise.
+Lip sync: face visible while speaking, natural mouth movement, no exaggerated lip motion.
 
 Constraints:
 No subtitles unless requested, no text overlays, no fake logos, no warped hands, no extra fingers, no plastic skin, no CGI look, no stock-video polish.
@@ -533,18 +573,13 @@ Output:
 
 For image-to-video, the uploaded image defines the subject and scene. Do not redescribe the whole image unless the user specifically asks for changes.
 
-Describe only:
-
-* camera movement
-* subject micro-motion
-* lighting shift
-* audio
-* what must stay unchanged
-
-Template:
+Use this structure:
 
 ```text
 Animate the uploaded image into a realistic video, [duration], [aspect ratio].
+
+Preserve:
+Keep the subject identity, background, clothing, product shape, labels, colors, composition, and camera angle unchanged.
 
 Motion:
 [one clear motion: slow push-in / steam rising / hair moving slightly / light shifting / hand lifting / product turning slightly]
@@ -555,14 +590,17 @@ Camera:
 Lighting:
 Preserve the original lighting direction. Add only a subtle natural light shift if needed.
 
+Motion realism:
+Keep movement subtle and physically believable. Do not let the subject, product, background, text, or face drift.
+
 Audio:
 [ambient sound or no audio]
 
-Preserve:
-Keep the subject identity, background, clothing, product shape, labels, colors, composition, and camera angle unchanged.
-
 Constraints:
 No identity change, no background change, no new objects, no text distortion, no warped hands, no product deformation, no CGI look.
+
+Output:
+[duration], [aspect ratio].
 ```
 
 ## Multi-shot videos
@@ -608,6 +646,9 @@ Keep the same subject, wardrobe, environment, lighting direction, and color temp
 
 Constraints:
 No teleporting, no outfit changes, no background changes, no warped hands, no fake text, no watermark, no CGI look.
+
+Output:
+[total duration], [aspect ratio].
 ```
 
 ## Duration guidance
@@ -699,192 +740,18 @@ Useful negatives:
 * no product deformation
 * no changed labels
 
-## Strong templates
-
-### RAW iPhone UGC video
-
-```text
-Create a RAW iPhone-style UGC video, 6 seconds, vertical 9:16.
-
-Subject:
-[person description] in [real setting].
-
-Action:
-[one clear action] while [speaking / not speaking].
-
-Scene:
-[ordinary real environment, time of day, background details].
-
-Camera:
-Smartphone back camera, handheld chest-level framing, slight natural shake, slight autofocus breathing, imperfect framing, natural phone sharpness.
-
-Lighting:
-[practical light source] from [direction], realistic shadows, natural skin texture.
-
-Motion realism:
-Small natural body movement, realistic hand motion, natural blinking and breathing, no exaggerated gestures.
-
-Audio:
-Natural phone-recorded audio with light room tone and [ambient sound].
-
-Voice / dialogue:
-Language: [language].
-Accent: [specific accent].
-Delivery: conversational, natural, not announcer-like.
-Exact spoken line: “[short line]”
-
-Constraints:
-No subtitles unless requested, no text overlays, no fake logos, no plastic skin, no warped hands, no robotic voice, no exaggerated accent, no CGI look, no glossy commercial style.
-
-Output:
-6 seconds, 9:16.
-```
-
-### Realistic talking-head video
-
-```text
-Create a realistic talking-head video, 6 seconds, vertical 9:16.
-
-Subject:
-[person description, wardrobe, expression].
-
-Action:
-The person speaks directly to camera with a relaxed posture, small natural nod, realistic blinking, and a slight breath before speaking.
-
-Scene:
-[real background] softly out of focus with ordinary details.
-
-Camera:
-Static smartphone back camera, eye-level medium close-up, natural phone sharpness, no dramatic camera movement.
-
-Lighting:
-Soft practical light from [direction], gentle shadows, realistic skin texture, no beauty filter.
-
-Audio:
-Clean but natural phone-recorded voice, subtle room tone, no music.
-
-Voice / dialogue:
-Language: [English / Spanish / bilingual].
-Accent: [specific accent].
-Delivery: [friendly / confident / calm / helpful], conversational, not announcer-like.
-Exact spoken line: “[short sentence]”
-
-Lip sync:
-Face remains visible while speaking, natural mouth movement, small pauses, no exaggerated lip motion.
-
-Constraints:
-No subtitles unless requested, no text overlays, no watermark, no plastic skin, no robotic voice, no exaggerated accent, no distorted mouth.
-
-Output:
-6 seconds, 9:16.
-```
-
-### Spanish talking-head video
-
-```text
-Create a realistic Spanish talking-head video, 6 seconds, vertical 9:16.
-
-Subject:
-[person description].
-
-Action:
-The person speaks directly to the camera with a natural expression, relaxed posture, small head movement, and realistic blinking.
-
-Scene:
-[real setting], softly out-of-focus background, ordinary details.
-
-Camera:
-RAW iPhone-style video, smartphone back camera, eye-level medium close-up, slight handheld movement.
-
-Lighting:
-[practical light source] from [direction], realistic shadows, natural skin texture.
-
-Audio:
-Natural phone-recorded voice with subtle room tone.
-
-Voice / dialogue:
-Language: Spanish.
-Accent: natural Mexican Spanish with [regional detail if needed], casual and conversational, not exaggerated.
-Delivery: friendly, clear, natural pace.
-Exact spoken line: “[short Spanish line]”
-
-Lip sync:
-Keep the mouth visible, natural mouth movement, small pauses, no overacting.
-
-Constraints:
-No subtitles unless requested, no text overlays, no watermark, no robotic voice, no exaggerated accent, no plastic skin, no distorted mouth.
-
-Output:
-6 seconds, 9:16.
-```
-
-### Product video
-
-```text
-Create a realistic product video, 5 seconds, [aspect ratio].
-
-Subject:
-[product description].
-
-Action:
-The product stays still while [one motion: slow camera push-in / slow orbit / steam rises / hand places it down].
-
-Scene:
-[real surface and background].
-
-Camera:
-[shot size], [one camera movement], stable and physically possible.
-
-Lighting:
-[soft window light / softbox / practical light] from [direction], realistic contact shadows and believable reflections.
-
-Motion realism:
-Subtle natural movement only. Preserve product shape, label placement, colors, packaging proportions, and texture.
-
-Audio:
-[subtle foley or ambient sound].
-
-Constraints:
-No fake text, no changed labels, no warped packaging, no duplicate products, no floating product, no CGI look, no glossy fake reflections.
-
-Output:
-5 seconds, [aspect ratio].
-```
-
-### Image-to-video
-
-```text
-Animate the uploaded image into a realistic video, 5 seconds, [aspect ratio].
-
-Motion:
-[one clear motion].
-
-Camera:
-[subtle push-in / gentle handheld drift / locked-off camera], physically possible and not distracting.
-
-Lighting:
-Preserve the original lighting direction with only a subtle natural shift.
-
-Audio:
-[ambient sound or no audio].
-
-Preserve:
-Keep the subject identity, background, clothing, product shape, labels, colors, composition, and camera angle unchanged.
-
-Constraints:
-No identity change, no background change, no new objects, no text distortion, no warped hands, no product deformation, no CGI look.
-
-Output:
-5 seconds, [aspect ratio].
-```
-
 ## Final output behavior
 
-Default response must be only one paste-ready prompt in a code block.
+Default response must be only one paste-ready Seedance prompt in a code block.
+
+The prompt must use the required multi-line template with section headers.
+
+Do not output a paragraph prompt.
 
 Do not include:
 
 * scenario
+* sample input
 * skill execution
 * analysis
 * explanation
@@ -892,18 +759,71 @@ Do not include:
 * “here is your prompt”
 * extra commentary
 
-When multiple prompt options are useful, separate with short headers:
+Correct default format for non-speaking videos:
 
-```markdown
-## RAW iPhone version
+```text
+Create [video type], [duration], [aspect ratio].
 
-[prompt]
+Subject:
+[...]
 
-## Talking-head version
+Action:
+[...]
 
-[prompt]
+Scene:
+[...]
 
-## Image-to-video version
+Camera:
+[...]
 
-[prompt]
+Lighting:
+[...]
+
+Motion realism:
+[...]
+
+Audio:
+[...]
+
+Constraints:
+[...]
+
+Output:
+[duration], [aspect ratio].
+```
+
+Correct default format for spoken videos:
+
+```text
+Create [video type], [duration], [aspect ratio].
+
+Subject:
+[...]
+
+Action:
+[...]
+
+Scene:
+[...]
+
+Camera:
+[...]
+
+Lighting:
+[...]
+
+Motion realism:
+[...]
+
+Audio:
+[...]
+
+Voice / dialogue:
+[...]
+
+Constraints:
+[...]
+
+Output:
+[duration], [aspect ratio].
 ```
