@@ -14,51 +14,153 @@ Avoid overproduced AI-video language. Do not rely on phrases like “cinematic m
 
 ## Required output format
 
-Every Seedance prompt must use the structured multi-line format below.
+Every final Seedance prompt must use this exact multi-line structure.
 
-Do not output the prompt as one paragraph. Do not combine sections. Do not omit the opening `Create...` line. Do not omit the core headers.
+Do not output a paragraph prompt.
 
-Required format:
+Do not invent new headers.
 
-```text
+Do not use bracketed labels.
+
+Do not combine sections.
+
+For non-speaking videos, the final answer must be:
+
 Create [video type], [duration], [aspect ratio].
 
 Subject:
-[one primary subject with concrete visible details]
+[...]
 
 Action:
-[one clear physical action]
+[...]
 
 Scene:
-[real location, time of day, background details]
+[...]
 
 Camera:
-[shot size, camera angle, lens or phone feel, camera movement]
+[...]
 
 Lighting:
-[practical light source, direction, color temperature, shadows]
+[...]
 
 Motion realism:
-[what moves, what stays stable, pacing, natural micro-movement]
+[...]
 
 Audio:
-[ambient sound, foley, room tone, music only if requested]
-
-Voice / dialogue:
-[language, accent, delivery, exact line, lip sync notes]
+[...]
 
 Constraints:
-[what to avoid]
+[...]
 
 Output:
 [duration], [aspect ratio].
-```
+
+For videos with speech, the final answer must be:
+
+Create [video type], [duration], [aspect ratio].
+
+Subject:
+[...]
+
+Action:
+[...]
+
+Scene:
+[...]
+
+Camera:
+[...]
+
+Lighting:
+[...]
+
+Motion realism:
+[...]
+
+Audio:
+[...]
+
+Voice / dialogue:
+[...]
+
+Constraints:
+[...]
+
+Output:
+[duration], [aspect ratio].
+
+For image-to-video, the final answer must be:
+
+Animate the uploaded image into a realistic video, [duration], [aspect ratio].
+
+Preserve:
+[...]
+
+Motion:
+[...]
+
+Camera:
+[...]
+
+Lighting:
+[...]
+
+Motion realism:
+[...]
+
+Audio:
+[...]
+
+Constraints:
+[...]
+
+Output:
+[duration], [aspect ratio].
+
+A prompt that uses different headers, bracketed labels, or a paragraph summary has failed the skill, even if the visual idea is good.
 
 For videos with no speaking, omit only the `Voice / dialogue:` section.
 
 For image-to-video prompts, keep a structured format but replace `Subject:` with `Preserve:` when the uploaded image already defines the subject.
 
 The final answer must be one clean code block containing this structure.
+
+##Format compliance check
+
+Before finalizing the answer, silently check the prompt against this list.
+
+A valid Seedance prompt must:
+
+start with Create [video type], [duration], [aspect ratio].
+use Subject: exactly, not Character: or [CHARACTER]
+use Action: exactly, not Action/Motion: or [ACTION]
+use Scene: exactly, not [SCENE]
+use Camera: exactly, not Visuals:
+use Lighting: exactly
+use Motion realism: exactly
+use Audio: exactly
+include Voice / dialogue: when the video has speech
+include Constraints: every time
+end with Output: every time
+keep each section separate
+never collapse the prompt into a final paragraph
+
+If any required header is missing, renamed, bracketed, or combined into another section, rewrite the prompt before answering.
+
+Invalid header names include:
+
+[SCENE]
+[CHARACTER]
+[VOICE/AUDIO]
+[VISUALS]
+[ACTION/MOTION]
+[PROMPT]
+Character:
+Visuals:
+Prompt:
+Ambient:
+
+These are invalid even if the prompt content is good.
 
 ## Core rule
 
