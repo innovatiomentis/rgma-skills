@@ -19,7 +19,7 @@ Subject:
 [one primary subject with concrete visible details]
 
 Action:
-[one clear physical action]
+[For 4 to 6 seconds: one clear physical action. For longer than 6 seconds: timestamped beats such as [0s-3s], [3s-7s], [7s-12s], [12s-15s].]
 
 Scene:
 [real location, time of day, background details]
@@ -88,8 +88,9 @@ Prioritize:
 * simple physical actions
 * realistic skin texture
 * natural voice delivery
-* one subject
-* one main action
+* one subject unless otherwise stated by user
+* one main action for 4 to 6 second clips
+* timestamped action beats for clips longer than 6 seconds
 
 Avoid overproduced AI-video language such as:
 
@@ -102,6 +103,7 @@ Avoid overproduced AI-video language such as:
 * Hollywood quality
 * insanely detailed
 * flawless skin
+* perfect
 
 These often create plastic skin, fake motion, glossy surfaces, and over-polished commercial visuals.
 
@@ -435,6 +437,7 @@ Before answering, silently verify:
 * The response is one code block.
 * The first line starts with `Create`.
 * The exact headers appear in this order:
+* If duration is longer than 6 seconds, the Action section contains timestamped beats.
 
   * Subject:
   * Action:
