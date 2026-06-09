@@ -1,6 +1,8 @@
-name	chatgpt-image-2
+---
 
-description	Write paste-ready prompts for ChatGPT Images 2.0 / GPT Image 2 that produce believable, realistic images instead of fake-looking AI visuals. Use this skill whenever the user asks for an image prompt, realistic photo prompt, RAW iPhone-style image, product image, ad creative, social graphic, poster, image edit, restyle, background generation, text-in-image layout, or a still image that may later be animated.
+name: chatgpt-image-2
+description: Write paste-ready prompts for ChatGPT Images 2.0 / GPT Image 2 that produce believable, realistic images instead of fake-looking AI visuals. Use this skill whenever the user asks for an image prompt, realistic photo prompt, RAW iPhone-style image, product image, ad creative, social graphic, poster, image edit, restyle, background generation, text-in-image layout, or a still image that may later be animated.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # ChatGPT Images 2.0 / GPT Image 2 Prompting Skill
 
@@ -68,6 +70,7 @@ Instead, use grounded camera language:
 
 Use this order:
 
+```text
 Create [specific image type] for [use case].
 
 Main subject:
@@ -93,6 +96,7 @@ Constraints:
 
 Output:
 [aspect ratio]
+```
 
 ## How to make images look real
 
@@ -150,19 +154,25 @@ Strong phrases:
 
 Example style line:
 
+```text
 Camera / realism:
 RAW iPhone photo, smartphone back camera, 26mm equivalent lens, natural HDR, slight phone sharpening, imperfect framing, realistic skin texture, no glamour retouching.
+```
 
 For low light:
 
+```text
 Camera / realism:
 RAW iPhone photo, smartphone back camera, low-light grain, soft autofocus, slight motion blur, compression artifacts in the shadows, mixed practical lighting, imperfect framing.
+```
 
 Avoid combining RAW iPhone style with studio or luxury-commercial language.
 
 Do not say:
 
+```text
 RAW iPhone photo, cinematic masterpiece, 8k, ultra sharp, perfect studio lighting.
+```
 
 That creates a confused prompt.
 
@@ -186,7 +196,9 @@ Good phrases:
 
 Example:
 
+```text
 Documentary-style photo, eye-level camera, 35mm lens feel, natural skin texture, practical daylight only, soft background blur, slight imperfections in framing, no glamour retouching.
+```
 
 ## Product realism
 
@@ -207,11 +219,15 @@ Always include:
 
 For product cutouts:
 
+```text
 Transparent background, crisp product silhouette, realistic edges, no halo, no fringing, preserve product geometry and label placement.
+```
 
 For product scenes:
 
+```text
 Place the product on a real surface with believable contact shadows, natural reflections, realistic scale, and subtle background detail. Do not change the label, packaging shape, or product proportions.
+```
 
 ## Website hero images
 
@@ -229,7 +245,9 @@ Always state:
 
 Example:
 
+```text
 Create a realistic website hero image, 16:9. Place the main subject on the right third of the image, with clean negative space on the left for a website headline overlay. Keep important details away from the top, sides, and bottom so it crops safely on desktop and mobile. No text inside the image.
+```
 
 ## Exact text in images
 
@@ -248,12 +266,14 @@ Rules:
 
 Example:
 
+```text
 Exact text:
 Headline: “YOUR WEBSITE SHOULD WORK FOR YOU”
 Subheadline: “Professional websites for local businesses”
 Button text: “Start Today”
 
 Render all text verbatim. No extra words, no duplicate text, no fake logo, no misspellings.
+```
 
 If the text is long, recommend shortening it. A realistic image with wrong text is not usable.
 
@@ -263,6 +283,7 @@ For edits, separate the change from what must stay locked.
 
 Use this structure:
 
+```text
 Edit the uploaded image by [specific change].
 
 Preserve [locked elements] exactly.
@@ -270,9 +291,11 @@ Preserve [locked elements] exactly.
 Match the new area to the original image’s perspective, scale, lighting direction, shadows, reflections, focus, grain, and camera quality.
 
 Do not add extra objects, fake text, watermarks, warped shapes, or unrealistic shadows.
+```
 
 Example:
 
+```text
 Edit the uploaded image by replacing the background with a realistic open field during late afternoon.
 
 Preserve the product exactly, including its shape, label, color, proportions, and placement.
@@ -280,6 +303,7 @@ Preserve the product exactly, including its shape, label, color, proportions, an
 Match the new background to the original camera angle, depth of field, lighting direction, contact shadows, and image quality.
 
 No extra products, no fake text, no watermark, no warped packaging.
+```
 
 ## Background generation
 
@@ -298,7 +322,9 @@ Specify:
 
 Good example:
 
+```text
 Add a realistic softly blurred field background at golden hour. Keep the product as the clear focus in the foreground. The horizon should sit low in the frame, with warm sunlight coming from camera-left. Add a believable contact shadow under the product. The background should support the product, not distract from it.
+```
 
 ## Fixing proportions
 
@@ -306,6 +332,7 @@ Use when the user says the image looks warped, too wide, too tall, or the produc
 
 Prompt pattern:
 
+```text
 Adjust the proportions of the uploaded image so the subject looks natural and physically accurate.
 
 Preserve the product identity, label, colors, textures, and arrangement exactly.
@@ -313,6 +340,7 @@ Preserve the product identity, label, colors, textures, and arrangement exactly.
 Correct any stretched, inflated, compressed, warped, or oversized elements. Keep realistic scale, perspective, shadows, and camera angle.
 
 Do not redesign the product, do not add new objects, and do not change the background unless needed to support the corrected proportions.
+```
 
 ## First frames for image-to-video
 
@@ -344,6 +372,7 @@ Good motion cues:
 
 Template:
 
+```text
 Create a video-ready first frame for an image-to-video clip.
 
 Scene:
@@ -366,6 +395,7 @@ No text, no watermark, no distorted hands, no extra logos, no fake signage.
 
 Output:
 [aspect ratio]
+```
 
 ## Negative instructions
 
@@ -536,23 +566,18 @@ Default response should be only the prompt in a clean code block.
 
 When multiple versions are useful, separate them with short headers:
 
+```markdown
 ## RAW iPhone version
 
-```text
-...
-```
+[prompt]
 
 ## Product hero version
 
-```text
-...
-```
+[prompt]
 
 ## Video-ready first frame
 
-```text
-...
+[prompt]
 ```
 
 Do not include long explanations unless the user asks.
-
