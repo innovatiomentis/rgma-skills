@@ -289,63 +289,64 @@ If realism matters, start with 4 to 6 seconds.
 
 ## Timeline beats
 
-Use timeline beats when the clip is longer than 6 seconds, has dialogue, includes more than one action, or needs a clear beginning, middle, and end.
+Timeline beats are mandatory for any video longer than 6 seconds.
 
-Do not use timeline beats for every prompt. Simple 4 to 6 second clips usually work better with one clear action.
+For 4 to 6 second videos, timeline beats are optional.
 
-When using timeline beats, keep the required Seedance headers. Put the timeline inside the Action: section. Do not replace the required headers.
+For 7 to 15 second videos, the Action: section must include timestamped beats.
 
-Good timeline structure:
+Timeline beats must stay inside the Action: section. Do not use timeline beats as top-level headers. Do not replace the required Seedance headers.
 
-Action:
-[0s–2s] Establish the subject and setting. The subject is already in position and the camera is steady.
-[2s–4s] Main action begins. Keep movement slow, natural, and physically believable.
-[4s–6s] The action lands. Hold on the result with subtle natural movement.
-
-For 7 to 10 second videos, use three or four beats:
+Correct format for a 7 to 10 second video:
 
 Action:
-[0s–2s] Establish the subject and setting.
-[2s–5s] Main action begins.
-[5s–8s] Dialogue, reaction, or second small movement.
-[8s–10s] Hold on the final expression, product, or result.
+[0s-2s] Establish the subject and setting with subtle natural movement.
+[2s-5s] The main action begins.
+[5s-8s] Dialogue, reaction, or a second small movement happens naturally.
+[8s-10s] Hold on the final expression, product, or result.
 
-For 10 to 15 second videos, use four or five beats maximum. Do not write a beat for every single second unless the timing truly matters.
+Correct format for a 10 to 15 second video:
+
+Action:
+[0s-3s] Establish the subject and setting with subtle natural movement.
+[3s-7s] The main action begins.
+[7s-12s] The subject continues the action or delivers the main spoken line.
+[12s-15s] Hold on the final expression, product, or result.
+
+For 10 to 15 second videos, use four or five beats maximum. Do not write a separate beat for every single second unless exact timing is important.
 
 Use timeline beats for:
 
-product demos
-testimonials
-talking-head videos
-before-and-after style clips
+product demos longer than 6 seconds
+testimonials longer than 6 seconds
+talking-head videos longer than 6 seconds
 multi-step UGC videos
 food preparation
+before-and-after style clips
 image-to-video with more than one movement
-clips with a clear camera move and subject action
+clips with both camera movement and subject action
 
 Avoid timeline beats when:
 
-the clip is only one simple movement
-the clip is 4 to 6 seconds
-image-to-video needs only a slow push-in, steam rising, hair movement, or subtle light shift
-the timeline would make the prompt too crowded
-
-Never use timeline labels as top-level headers. These are allowed only inside Action:.
+the clip is 4 to 6 seconds and has only one simple movement
+image-to-video only needs a slow push-in, steam rising, hair movement, or subtle light shift
+the timeline would make a short prompt crowded
 
 Correct:
 
 Action:
-[0s–2s] She lifts the serum bottle toward the mirror.
-[2s–4s] She applies two drops to her cheek.
-[4s–6s] She smiles naturally and finishes the line.
+[0s-3s] She lifts the serum bottle toward the mirror and smiles naturally.
+[3s-7s] She applies a few drops to her cheek while beginning the spoken line.
+[7s-12s] She gently rubs the serum into her skin with realistic hand movement and natural blinking.
+[12s-15s] She holds the bottle near her face and finishes with a genuine smile.
 
 Incorrect:
 
-[0s–2s]:
-[...]
+[0s-3s]:
+She lifts the serum bottle.
 
-[2s–4s]:
-[...]
+[3s-7s]:
+She applies the serum.
 
 The required headers must still appear exactly:
 
@@ -359,6 +360,10 @@ Audio:
 Voice / dialogue:
 Constraints:
 Output:
+
+Before finalizing, silently check this rule:
+
+If the video is longer than 6 seconds and the Action: section does not include timestamped beats, rewrite the prompt before answering.
 
 ## Aspect ratios
 
@@ -396,6 +401,33 @@ Useful constraints:
 * no background change
 * no product deformation
 * no changed labels
+
+## Output line rule
+The Output: section must contain only duration and aspect ratio.
+
+Correct:
+
+Output:
+15 seconds, 9:16.
+
+Incorrect:
+
+Output:
+High-fidelity 4K realistic video.
+
+Do not put quality terms, resolution terms, platform names, or style descriptions in the Output: section.
+
+Forbidden in Output::
+
+4K
+8K
+high-fidelity
+realistic video
+cinematic
+professional
+ultra realistic
+Instagram Reel
+social media ad
 
 ## Final self-check
 
