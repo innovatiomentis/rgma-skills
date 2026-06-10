@@ -1,5 +1,5 @@
 ---
-name: chatgpt-image-2
+name: real-image-2
 description: "Write paste-ready prompts for ChatGPT Images 2.0 / GPT Image 2 that produce believable, realistic images instead of fake-looking AI visuals. Use this skill whenever the user asks for an image prompt, realistic photo prompt, RAW iPhone-style image, product image, ad creative, social graphic, poster, image edit, restyle, background generation, text-in-image layout, or a still image that may later be animated. The full method is in this file — ALWAYS read this entire skill before producing anything."
 ---
 
