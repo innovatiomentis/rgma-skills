@@ -1,108 +1,519 @@
 ---
-name: arpoer
-description: Generate ARPOER music-marketing content from a song — video ideas derived from the lyrics plus social captions. Use for any ARPOER request: video ideas, hooks, content for a song or lyric, captions, hashtags, or promo concepts. Input is a song (lyrics, fragment, title, or vibe). Output is video ideas (Voz A or Voz B) and 3 caption variations per idea. For AI generation prompts, hand off to the chatgpt-image-2 and seedance-2 skills — this skill decides WHAT to make, not how to prompt it.
+name: real-images-2
+description: Write paste-ready prompts for ChatGPT Images 2.0 / GPT Image 2 that produce believable, realistic images instead of fake-looking AI visuals. Use this skill whenever the user asks for an image prompt, realistic photo prompt, RAW iPhone-style image, product image, ad creative, social graphic, poster, image edit, restyle, background generation, text-in-image layout, or a still image that may later be animated.
+ChatGPT Images 2.0 / GPT Image 2 Prompting Skill
 ---
+Default output: give the user one clean, paste-ready prompt in a code block. No long explanation unless they ask.
 
-# ARPOER — Video Ideas + Captions from a Song
+The goal is to create prompts that produce believable, usable images. Avoid the over-polished AI look. The best prompts describe what a real camera would see, including ordinary details, imperfect framing, real lighting, texture, shadows, grain, and compression.
 
-ARPOER is a multi-genre Mexican songwriter/artist (reggaeton, corridos tumbados, sierreño, balada, banda, pop, rock, cumbia...). This skill turns a song into content ideas and captions. It does NOT write image/video generation prompts — when a Voz B idea needs them, use the `chatgpt-image-2` and `seedance-2` skills.
+Core rule
 
-ALL output in Spanish (Mexico). Natural slang allowed. NEVER use emojis. Direct tone, never desperate, never cringe. Funny only if the lyric or genre supports it.
+Do not use lazy quality words as the main realism strategy.
 
-## Step 0 — Two checks before anything
+Avoid phrases like:
 
-1. **Song state.** Pre-lanzamiento or ya disponible? If not stated, ASK before writing any caption. Pre: "se viene", "pronto", "preguarda", "guarda la fecha". Post: "ya está en todas las plataformas", "dale play", "link en bio". Never mix.
-2. **Genre + mood.** Never assume. Infer from lyrics/vocabulary/instrumentation if clear; if unclear or hybrid, ASK: genre? reference artists? where does this song naturally play? who's the typical listener? dominant emotion (fiesta, despecho, flexeo, nostalgia, amor, rabia)?
+8k
+ultra realistic
+hyper realistic
+masterpiece
+cinematic masterpiece
+insanely detailed
+award-winning
+perfect lighting
+flawless skin
+unreal engine
+octane render
+glossy commercial look
 
-## La línea: invitar sí, fingir no (REGLA DURA para Voz B)
+These broad quality terms tend to encourage over‑polished, stock‑like results.
 
-AI characters may **invite, perform, and embody** the song. They may **never testify** — never present a fabricated personal experience as real.
+Use the word photorealistic or phrases like “real photograph” or “taken on a real camera” to set the intended realism mode instead of piling on generic quality adjectives. Camera descriptors (for example, “iPhone photo,” “35 mm lens feel,” or “professional photography”) should act as high‑level style cues rather than literal optical specifications. Choose descriptors that fit the use case—professional photography might be appropriate for product or hero images, while candid phone shots demand casual capture language.
 
-Test for every Voz B line and concept: *¿Un viewer lo tomaría como testimonio real de una persona real?* If yes → prohibited. If it reads as creative fiction or open invitation → allowed.
+Instead, use grounded camera language:
 
-- **PROHIBIDO (testimonio falso):** "me la pasaron", "no la suelto", "no dejo de escucharla", "la están poniendo en todos lados", "la escuché en el antro", fake first-listen reactions framed as real, any fake fan review or popularity claim — and, as always, any authorship claim ("yo la hice", "mi nueva rola").
-- **PERMITIDO (invitación / ficción legible):** "pónganla", "escúchala", "búscala", "dedícasela", POV scenarios, dedications, characters living a scene the lyric describes, scenes where the song plays as soundtrack — music-video logic, clearly creative.
-- Real reactions and real listening stories belong to **Voz A only** (the real user). A Voz B character can vibe to the song in a scene; it cannot claim the experience was real.
+RAW iPhone photo
+smartphone back camera
+real candid frame grabbed from a phone video
+natural daylight
+practical indoor lighting
+low-light grain
+slight motion blur
+soft autofocus
+imperfect framing
+compression artifacts
+natural skin texture
+visible pores
+real shadows
+believable reflections
+ordinary background clutter
+no glamour retouching
+Decide the image type first
+Request looks like	Output type
+Realistic person, lifestyle scene, candid moment	RAW iPhone / documentary prompt
+Social ad or local business visual	realistic marketing prompt
+Product photo or website hero image	product / hero prompt
+Poster or graphic with words	exact-text layout prompt
+Infographic or explainer	infographic prompt
+Website, app, dashboard, mobile screen	UI mockup prompt
+Edit an uploaded image	edit prompt
+Extend, upscale, fix proportions, change background	image repair prompt
+First frame for image-to-video	video-ready first-frame prompt
+Character or repeated subject	consistency prompt
+The structure that works
 
-## Step 1 — Think through the song (in order, before any ideas)
+Use this order:
 
-1. **Mood:** what feeling, what context, what audience does this hit?
-2. **Línea-cita:** which single lyric line is the most quotable/shareable — the one people would put on screen or screenshot? Name it explicitly.
-3. **World:** where does this song LIVE? Concrete places the listener would actually play it (antro, troca, recámara, gym, carretera, cantina, fiesta familiar). Lighting/color of that world. Who's in it, what they wear, what objects surround them. The world must match the genre — antro neón is not sierreño; rancho golden hour is not perreo.
+Create [specific image type] for [use case].
 
-## Step 2 — Generate ideas (think, don't template)
+Main subject:
+[who or what is in the image, with specific visible details]
 
-Produce 3–4 ideas. Each must be a REALISTIC scenario from the song's world — something that could genuinely happen and get filmed on a phone, not an ad. Drive each idea with a different virality mechanism:
+Scene:
+[real location, time of day, background, ordinary details]
 
-- Curiosity gap (you must keep watching to resolve it)
-- Identification ("esa soy yo" / "ese soy yo" — the lyric describes the viewer)
-- POV / dedication (viewer imagines receiving or living the song)
-- Embodiment (a character lives the exact scene of the lyric)
-- Tension→payoff landing exactly on the línea-cita or the hardest verse moment
+Composition:
+[camera distance, crop, angle, subject placement, negative space]
 
-Hook in the first 1–2 seconds, always. The payoff syncs to the exact lyric fragment — state which lines play when. Every Voz B idea must pass la línea before it's proposed.
+Lighting:
+[real light sources, direction, shadows, reflections]
 
-**Voz A vs Voz B — classify every idea.** Test: does the format imply authorship or real experience?
-- **Voz A (el compositor):** the real user on camera — studio, notebook, "yo escribí", real reactions, first-person process. User films it himself; give phone-recording instructions. Strong CTAs allowed.
-- **Voz B (el mundo):** AI fictional characters inviting or embodying. Credit always to ARPOER, never the character.
+Camera / realism:
+[camera type, lens feel, focus, grain, motion blur, compression, imperfections]
 
-Default mix when user doesn't specify: 1 Voz A + 2–3 Voz B.
+Text / product / brand requirements:
+[exact text, locked product details, logo instructions, what must stay accurate]
 
-## Step 3 — Captions (proceso anti-cringe — think first, write after)
+Constraints:
+[what to avoid]
 
-Before writing any caption, answer these for THIS idea:
+Output:
+[aspect ratio]
+How to make images look real
 
-1. ¿Qué escribiría de verdad la persona del video? Not a brand, not a community manager — the person.
-2. ¿La caption agrega una capa nueva (segundo remate, contexto, continuación de la letra) o solo describe el video? Describing = rewrite.
-3. **Screenshot test:** does the line stand alone as something worth reading without the video?
-4. ¿Suena a amigo o a anuncio? If it sells, dry it out.
+Realism comes from physical detail, not hype words.
 
-Three variations per idea, each a structurally different angle:
+Good realism details:
 
-1. **Juego con la letra** — the línea-cita recontextualized, continued, or twisted. Not just quoted.
-2. **La frase del escenario** — what the person in the video would actually type. First person, dry, specific.
-3. **Invitación directa seca** — matching song state, zero begging, shortest of the three.
+what type of camera captured it
+whether it is front camera, back camera, or main camera
+time of day
+light direction
+real shadows
+imperfect framing
+background blur that makes sense
+motion blur when people are moving
+low-light grain when indoors or at night
+skin texture without retouching
+practical clutter in the background
+believable contact shadows under objects
+natural reflections on glass, metal, plastic, or wet pavement
 
-**Prohibido en captions:** hype genérico ("temazo", "brutal", "no te la puedes perder"), súplicas ("apóyenme", "ayúdenme a llegar a X"), explicar el chiste, signos de exclamación dobles, mayúsculas sostenidas, more than one sentence when one will do. If it needs two sentences, cut one.
+Bad realism details:
 
-5 hashtags per variation: mix ARPOER + song + genre + context + discovery. Vary across ideas — never one generic set.
+8k resolution
+perfect lighting
+ultra sharp everything
+flawless symmetry
+polished skin
+dramatic cinematic color grading when the image should feel candid
+overly clean backgrounds when the scene should feel real
+too many adjectives without camera or lighting direction
+RAW iPhone style
 
-## Output format (per idea)
+Use this when the image should feel real, casual, social, candid, or user-generated.
 
-```
-IDEA #X — [name] [VOZ A o VOZ B]
-Mecanismo: [which virality mechanism and why it fits this song]
-Escenario: [the realistic scene — place, person, moment, what happens]
-Sync: [which lyric fragment plays at which moment; where the línea-cita lands]
-Texto en pantalla: [short on-screen phrases]
-[Voz A → how the user films it. Voz B → "Prompts: generar con chatgpt-image-2 + seedance-2."]
+Strong phrases:
 
-Captions:
-1. [juego con la letra] #x #x #x #x #x
-2. [frase del escenario] #x #x #x #x #x
-3. [invitación seca] #x #x #x #x #x
-```
+RAW iPhone photo
+vertical 9:16
+smartphone back camera
+real candid phone photo
+real frame grabbed from a phone video
+not posed
+not professional
+not commercial
+imperfect framing
+slight motion blur
+soft autofocus
+natural HDR
+low-light grain
+compression artifacts in shadows
+realistic skin texture
+no glamour retouching
 
-When in doubt about anything — ask before generating.
+Example style line:
 
-## Calibración de captions (contraste, no plantilla)
+Camera / realism:
+RAW iPhone photo, smartphone back camera, 26mm equivalent lens, natural HDR, slight phone sharpening, imperfect framing, realistic skin texture, no glamour retouching.
 
-MAL: "Ya salió este temazo, no se la pueden perder, denle play"
-BIEN: "esta canción sabe algo de mí que yo no he contado"
-Por qué: el malo es hype de community manager; el bueno pasa el screenshot test y crea curiosity gap.
+For low light:
 
-MAL: "POV: te dedican esta canción ¿qué harías? comenta abajo"
-BIEN: "si me la dedican a mí, yo sí contesto el mensaje"
-Por qué: el malo explica el chiste y mendiga interacción; el bueno es la frase que la persona del video escribiría.
+Camera / realism:
+RAW iPhone photo, smartphone back camera, low-light grain, soft autofocus, slight motion blur, compression artifacts in the shadows, mixed practical lighting, imperfect framing.
 
-## Self-check (silent, before answering)
+Avoid combining RAW iPhone style with studio or luxury-commercial language.
 
-1. ¿Pregunté o confirmé el estado de la canción?
-2. ¿Pregunté o confirmé género/mundo?
-3. ¿Nombré la línea-cita explícitamente?
-4. ¿Cada línea de Voz B pasa la línea (invitar/encarnar, nunca testificar)?
-5. ¿Cada idea usa un mecanismo de viralidad distinto?
-6. ¿Las 3 captions son ángulos distintos y pasan el screenshot test, sin patrones prohibidos?
-7. ¿Los hashtags varían entre ideas?
+Do not say:
 
-If any check fails, fix it before answering.
+RAW iPhone photo, cinematic masterpiece, 8k, ultra sharp, perfect studio lighting.
+
+That creates a confused prompt.
+
+Note: camera specifications such as focal length, sensor type, or lens feel should be treated as broad style cues rather than literal technical requirements. Choose a small number of coherent descriptors (e.g., “main back camera,” “35 mm lens feel”) and avoid mixing conflicting camera modes.
+
+Documentary realism
+
+Use this when the image should look like a real photo but not necessarily a phone shot.
+
+Good phrases:
+
+documentary-style photo
+eye-level camera
+35mm lens feel
+50mm lens feel
+natural skin texture
+practical light only
+real background detail
+shallow depth of field
+soft natural shadows
+no glamour retouching
+slightly imperfect composition
+
+Example:
+
+Documentary-style photo, eye-level camera, 35mm lens feel, natural skin texture, practical daylight only, soft background blur, slight imperfections in framing, no glamour retouching.
+Product realism
+
+Use this for e-commerce images, website hero images, product ads, packaging, food, and object scenes.
+
+Always include:
+
+preserve product shape
+preserve label placement
+preserve packaging proportions
+realistic contact shadows
+believable scale
+no warped labels
+no fake text
+no extra products
+no melted or inflated packaging
+no impossible reflections
+
+For product cutouts:
+
+Plain white or other solid opaque background, crisp product silhouette, realistic edges, no halo, no fringing, preserve product geometry and label placement.
+
+(Transparent backgrounds are not supported by GPT Image 2. Use an opaque background here and remove it later in post‑processing if transparency is required.)
+
+For product scenes:
+
+Place the product on a real surface with believable contact shadows, natural reflections, realistic scale, and subtle background detail. Do not change the label, packaging shape, or product proportions.
+Website hero images
+
+Hero images need room for layout and cropping.
+
+Always state:
+
+16:9 unless another ratio is requested
+subject on one side
+clean negative space on the other
+no text inside the image unless requested
+important details away from the edges
+usable as a website banner
+safe crop for desktop and mobile
+
+Example:
+
+Create a realistic website hero image, 16:9. Place the main subject on the right third of the image, with clean negative space on the left for a website headline overlay. Keep important details away from the top, sides, and bottom so it crops safely on desktop and mobile. No text inside the image.
+Exact text in images
+
+When text must appear in the image, keep it short and controlled.
+
+Rules:
+
+quote every exact phrase
+label each text block by role
+use fewer words
+request large readable text
+say “render verbatim”
+say “no extra words”
+say “no duplicate text”
+avoid tiny legal copy
+
+Example:
+
+Exact text:
+Headline: “YOUR WEBSITE SHOULD WORK FOR YOU”
+Subheadline: “Professional websites for local businesses”
+Button text: “Start Today”
+
+Render all text verbatim. No extra words, no duplicate text, no fake logo, no misspellings.
+
+If the text is long, recommend shortening it. A realistic image with wrong text is not usable.
+
+Image edits
+
+For edits, separate the change from what must stay locked.
+
+Use this structure:
+
+Edit the uploaded image by [specific change].
+
+Preserve [locked elements] exactly.
+
+Match the new area to the original image’s perspective, scale, lighting direction, shadows, reflections, focus, grain, and camera quality.
+
+Do not add extra objects, fake text, watermarks, warped shapes, or unrealistic shadows.
+
+Example:
+
+Edit the uploaded image by replacing the background with a realistic open field during late afternoon.
+
+Preserve the product exactly, including its shape, label, color, proportions, and placement.
+
+Match the new background to the original camera angle, depth of field, lighting direction, contact shadows, and image quality.
+
+No extra products, no fake text, no watermark, no warped packaging.
+Background generation
+
+When adding or replacing a background, do not just say “make a realistic background.”
+
+Specify:
+
+location type
+time of day
+depth of field
+horizon height
+light direction
+surface the subject sits on
+contact shadows
+how much attention the background should take
+
+Good example:
+
+Add a realistic softly blurred field background at golden hour. Keep the product as the clear focus in the foreground. The horizon should sit low in the frame, with warm sunlight coming from camera-left. Add a believable contact shadow under the product. The background should support the product, not distract from it.
+Fixing proportions
+
+Use when the user says the image looks warped, too wide, too tall, or the product changed.
+
+Prompt pattern:
+
+Adjust the proportions of the uploaded image so the subject looks natural and physically accurate.
+
+Preserve the product identity, label, colors, textures, and arrangement exactly.
+
+Correct any stretched, inflated, compressed, warped, or oversized elements. Keep realistic scale, perspective, shadows, and camera angle.
+
+Do not redesign the product, do not add new objects, and do not change the background unless needed to support the corrected proportions.
+First frames for image-to-video
+
+A good video first frame needs depth and one clear motion cue.
+
+Include:
+
+foreground
+midground
+background
+clean subject silhouette
+one visible motion cue
+believable camera path
+no text unless needed
+no watermark
+
+Good motion cues:
+
+hair about to move
+fabric lifting
+dust in sunlight
+steam rising
+drink being raised
+papers mid-fall
+rain on pavement
+neon reflections shimmering
+confetti falling
+product slightly angled as if ready for a slow push-in
+
+Template:
+
+Create a video-ready first frame for an image-to-video clip.
+
+Scene:
+[subject and setting]
+
+Composition:
+[foreground, midground, background, clear subject silhouette, camera angle]
+
+Motion cue:
+[one visible motion element]
+
+Lighting:
+[realistic light source and direction]
+
+Camera / realism:
+[RAW iPhone, documentary, or cinematic camera details]
+
+Constraints:
+No text, no watermark, no distorted hands, no extra logos, no fake signage.
+
+Output:
+[aspect ratio]
+Negative instructions
+
+Use negative instructions based on likely failure points. Short, targeted lists (around three to six items) are usually sufficient. Overly long catch‑all blacklists can dilute the model’s focus. Tailor the negatives to the specific scene rather than copying huge lists verbatim.
+
+Useful negatives:
+
+no 8k
+no CGI look
+no plastic skin
+no airbrushed face
+no glamour retouching
+no stock-photo look
+no fake text
+no watermark
+no fake logo
+no readable fake signage
+no distorted hands
+no extra fingers
+no warped products
+no changed product labels
+no duplicate products
+no unrealistic shadows
+Aspect ratios
+
+Always include an aspect ratio.
+
+1:1: product square, e-commerce, social feed
+4:5: Instagram feed portrait
+2:3: poster, vertical editorial
+9:16: Reels, Stories, TikTok, phone screenshot, UGC
+16:9: website hero, video first frame, banner
+4:3: editorial or traditional photo
+3:4: vertical product or portrait
+Strong prompt templates
+RAW iPhone realistic photo
+Create a photorealistic RAW iPhone photo, vertical 9:16, not a professional photograph. It should look like a real candid frame grabbed from a phone video.
+
+Scene:
+[describe the real-life moment]
+
+Main subject:
+[person/object/action, clothing, expression, visible details]
+
+Setting:
+[real setting, time of day, background details]
+
+Composition:
+[distance, angle, crop, imperfect framing]
+
+Lighting:
+[practical light source, direction, shadows, reflections]
+
+Camera / realism:
+Smartphone back camera, 26mm equivalent lens, natural HDR or low-light grain depending on the scene, slight motion blur, soft autofocus, imperfect framing, compression artifacts, realistic skin texture, no glamour retouching.
+
+Constraints:
+No text, no watermark, no fake logos, no distorted hands, no plastic skin, no cinematic color grading, no stock-photo look, no 8k.
+
+Output:
+9:16
+Realistic documentary photo
+Create a photorealistic documentary-style photo for [use case].
+
+Main subject:
+[subject details]
+
+Scene:
+[location, time of day, ordinary background details]
+
+Composition:
+Eye-level camera, [35mm or 50mm] lens feel, [close-up / medium shot / wide shot], subject placed [position], natural crop.
+
+Lighting:
+[real light source] coming from [direction], with realistic shadows and natural contrast.
+
+Camera / realism:
+Natural skin texture, visible real-world texture, soft background blur, slight imperfections in framing, no glamour retouching, no overly polished commercial look.
+
+Constraints:
+No text, no watermark, no fake logos, no plastic skin, no stock-photo look, no 8k.
+
+Output:
+[aspect ratio]
+Product image
+Create a photorealistic product image for [use case].
+
+Main product:
+[product details]
+
+Composition:
+[placement, camera angle, crop, negative space]
+
+Surface / background:
+[white background, real table, field, kitchen counter, etc.]
+
+Lighting:
+[soft daylight / softbox / window light] from [direction], realistic contact shadows, believable reflections.
+
+Product accuracy:
+Preserve the product shape, label placement, packaging proportions, colors, and texture. Keep the product physically accurate and not warped.
+
+Constraints:
+No fake text, no extra products, no changed labels, no warped packaging, no melted shapes, no watermark, no 8k, no CGI look.
+
+Output:
+[aspect ratio]
+Website hero image
+Create a photorealistic website hero image for [business/use case], 16:9.
+
+Main subject:
+[subject details]
+
+Composition:
+Place the main subject on the [left/right] third of the image with clean negative space on the opposite side for website headline overlay. Keep important details away from the edges so the image crops well on desktop and mobile.
+
+Scene:
+[realistic setting]
+
+Lighting:
+[real light source and direction]
+
+Camera / realism:
+[smartphone/documentary/product camera details], realistic shadows, natural texture, no overly polished stock-photo look.
+
+Constraints:
+No text inside the image, no watermark, no fake logos, no warped products, no unrealistic shadows, no 8k.
+
+Output:
+16:9
+Image edit
+Edit the uploaded image by [specific change].
+
+Preserve [locked elements] exactly, including [product/logo/face/background/camera angle/composition].
+
+Match the edited area to the original image’s lighting direction, perspective, scale, contact shadows, color temperature, focus, grain, and camera quality.
+
+Do not add text, logos, watermarks, extra products, distorted shapes, unrealistic shadows, or a CGI look.
+
+Output:
+[aspect ratio]
+Final output behavior
+
+Default response should be only the prompt in a clean code block.
+
+When multiple versions are useful, separate them with short headers:
+
+## RAW iPhone version
+
+[prompt]
+
+## Product hero version
+
+[prompt]
+
+## Video-ready first frame
+
+[prompt]
+
+Do not include long explanations unless the user asks.
