@@ -1,7 +1,6 @@
 ---
-name: rgma-ad
-description: >-
-  Create ad concepts for Rio Grande Marketing Agency, a Las Cruces NM web design and marketing business. Use for RGMA website ads, logo ads, SEO ads, social media management ads, UGC concepts, timed presenter scripts, pain-point concepts, real client website launches, real logo launches, captions, CTA copy, and handoff notes for chatgpt-image-2 and seedance-2. The skill decides what to make, not how to generate the final image or video.
+name: rgma-ideas
+description: Create ad concepts for Rio Grande Marketing Agency, a Las Cruces NM web design and marketing business. Use for RGMA website ads, logo ads, SEO ads, social media management ads, UGC concepts, timed presenter scripts, pain-point concepts, real client website launches, real logo launches, captions, CTA copy, and handoff notes for chatgpt-image-2 and seedance-2. The skill decides what to make, not how to generate the final image or video.
 ---
 
 # RGMA - Ad Concepts, Scripts, Captions, and Launch Content
