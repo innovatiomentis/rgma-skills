@@ -1,6 +1,6 @@
 ---
 name: seedance-2
-description: Write paste-ready Seedance 2.0 prompts for believable realistic videos using one strict multi-line format with exact headers: Create, Subject, Action, Scene, Camera, Lighting, Motion realism, Audio, Voice / dialogue, Constraints, Output. Use for Seedance prompts, AI video, text-to-video, image-to-video, UGC, product videos, testimonials, talking-head videos, voiceover direction, dialogue direction, accents, lip-sync guidance, ambient sound, and fixing videos that look fake or overproduced.
+description: Write paste-ready Seedance 2.0 prompts for believable realistic videos using one strict multi-line format with exact headers: Create, Subject, Action, Scene, Camera, Lighting, Motion realism, Audio, Voice - dialogue, Constraints, Output. Use for Seedance prompts, AI video, text-to-video, image-to-video, UGC, product videos, testimonials, talking-head videos, voiceover direction, dialogue direction, accents, lip-sync guidance, ambient sound, and fixing videos that look fake or overproduced.
 ---
 # Seedance 2.0 Prompting Skill
 
