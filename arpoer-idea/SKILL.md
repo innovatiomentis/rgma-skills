@@ -1,5 +1,5 @@
 ---
-name: arpoer
+name: arpoer-idea
 description: >-
   Generate ARPOER music marketing content from a song: video ideas derived from lyrics, captions, hashtags, hooks, promo angles, and content strategy. Use for any ARPOER request involving a song, lyric fragment, title, vibe, video idea, caption, hashtag, hook, promo concept, pre release campaign, or post release sustain content. This skill decides WHAT to make. For AI image or video prompts, hand off to the chatgpt-image-2 and seedance-2 skills after the idea is defined.
 ---
