@@ -46,6 +46,98 @@ Allowed for fictional examples:
 - "A dramatized example of a shop owner whose website is not helping."
 - "If your menu, hours, or services are hard to find, customers may give up before they call."
 
+## Ethical AI Presenter / UGC Character Safeguard
+
+For RGMA ads using AI-generated characters, AI presenters, or UGC-style actors, write scripts in a way that avoids deceptive representation.
+
+### Core rule
+
+AI characters may act as presenters, explainers, narrators, or illustrative scenario characters. They may not be scripted as fake real customers, fake employees, fake testimonials, or people claiming personal experiences that did not happen.
+
+Keep every AI-led ad framed as a promotional or illustrative message, not a fake testimonial.
+
+### Default framing
+
+* If the video features the real owner, use honest first-person owner language.
+* If the video features a generic AI UGC presenter, use neutral RGMA brand language.
+* If the video uses a scenario character, make it clear they are illustrating a problem, not claiming a real personal experience.
+* If the video dramatizes a business owner pain moment, the character can show frustration, confusion, or stress, but should not claim they hired RGMA or got results from RGMA.
+* Do not imply the video is real customer footage, real employee footage, or a real testimonial when the person, voice, or scene is AI-generated.
+
+### Preferred framing
+
+Use the AI character as:
+
+* a spokesperson explaining the problem and solution
+* a neutral narrator
+* a fictional business owner illustrating the pain
+* a visual metaphor for the problem
+* a presenter delivering an RGMA ad
+
+Safe wording:
+
+* “If your website is outdated, Rio Grande Marketing Agency can help.”
+* “Your website should make it easy for customers to find you, trust you, and contact you.”
+* “For local businesses in Las Cruces, your website should make the basics easy.”
+* “Rio Grande Marketing Agency builds clean websites for local businesses that want to look more professional online.”
+* “Message Rio Grande Marketing Agency today.”
+
+Avoid:
+
+* fake customer testimonials
+* fake employee introductions
+* fake “I hired RGMA” stories
+* fake before-and-after claims
+* fake lived-experience claims
+* fake client results
+* scripts where AI characters say they personally hired RGMA
+* scripts where AI characters claim real results unless verified
+* “As a business owner, I used RGMA...” unless it is based on a real person and approved story
+* overstating RGMA’s size, team, capabilities, or results
+* using “we” in a way that implies fake staff, fake scale, or a fake team
+
+### Owner-led videos
+
+If the video features the real RGMA owner, default to honest first-person owner language:
+
+* “I help local businesses build clean websites.”
+* “I build mobile-friendly websites for small businesses.”
+* “My goal is to make it easier for customers to contact you.”
+* “If your website feels outdated, I can help clean it up and make it easier for people to find what they need.”
+
+Owner-led videos may use “I” naturally. Use “we” only when the user wants agency-style wording or when it accurately represents RGMA’s service process.
+
+### Generic AI UGC presenter videos
+
+If the video features a generic AI character, default to neutral brand language:
+
+* “Rio Grande Marketing Agency helps local businesses...”
+* “Your website should help customers contact you.”
+* “If your site looks outdated, it could be hurting trust.”
+* “A cleaner website can make your business look more professional online.”
+
+Do not write generic AI presenters as if they personally own RGMA, work for RGMA, hired RGMA, or received results from RGMA unless the user confirms that framing is intentional and truthful.
+
+### Scenario character videos
+
+If the video features a fictional business owner or customer pain scenario, keep the character in the problem, not the result.
+
+Allowed:
+
+* a business owner frustrated with an outdated website
+* a business owner overwhelmed by DMs and appointment requests
+* a restaurant owner annoyed because customers keep asking for the menu
+* a contractor confused by an old DIY website
+* a salon owner missing booking messages
+
+Not allowed:
+
+* “RGMA fixed my website”
+* “I hired RGMA and now I get more bookings”
+* “My sales went up after RGMA built this”
+* “They got me to the top of Google”
+* “This is my real business story” unless verified
+
 ### Offer lock
 
 Every concept must sell **exactly one** RGMA offer. Do not mix multiple services in one ad. Map the owner's pain moment to the best offer using the pain-to-offer map. For example, restaurant menu confusion -> Starter Website; booking chaos -> Booking Website; manual shipping and orders -> E-Commerce Website; outdated logo -> Logo Package; no Google visibility -> SEO. **Never** sell the client's food, products, appointments, or services.
